@@ -1,0 +1,13 @@
+﻿@*IEnumerable is used for internal sources, used in views (no sql call)*@
+
+@model IEnumerable<Course>
+
+<h1>These are my courses</h1>
+<!--drop down list-->
+<select>
+    <option> Choose course: </option>
+    @foreach (Course course in Model)
+    {
+        <option>@course.Name</option>
+    }
+</select>

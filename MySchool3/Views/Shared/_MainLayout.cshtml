@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+</head>
+<body>
+    <div>
+        <nav>
+            <!--asp-controller directs to controller file "HomeController"-->
+            <!--asp-method directs to method "Index" inside of HomeController file-->
+            <p><a asp-controller="Home" asp-action="Index">Home</a></p>
+            <p><a asp-controller="Home" asp-action="Roster">Roster</a></p>
+            <p><a asp-controller="Home" asp-action="Courses">Courses</a></p>
+            <p><a asp-controller="Home" asp-action="Exam">Exam</a></p>
+            <p><a asp-controller="Home" asp-action="Cookies">CookieMonster</a></p>
+            <p><a asp-controller="Home" asp-action="Customers">Customers</a></p>
+
+        </nav>
+        @RenderBody()
+    </div>
+</body>
+</html>

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MySchool3.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,10 @@ namespace MySchool3
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //prefered solution in relation to singleton
+            services.AddTransient<ISchoolRepository, FakeSchoolRepository>();
             services.AddControllersWithViews();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +40,7 @@ namespace MySchool3
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseRouting();
+            app.UseSession(); //after use routing before endpoints
 
             app.UseEndpoints(endpoints =>
             {
