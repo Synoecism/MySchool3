@@ -1,0 +1,22 @@
+﻿<h1>Welcome to the CookieMonster</h1>
+<h2>Specify your preferences:</h2>
+
+<form asp-controller="Home" asp-action="WriteCookies">
+    <select name="setting">
+        <option value="fontName">Font name</option>
+        <option value="fontSize">Font size</option>
+        <option value="fontColor">Color</option>
+    </select>
+    <input type="text" name="settingValue" />
+    <input type="checkbox" name="isPersistent"
+           value="true" /> Is Persistent?
+    <input type="submit" value="Write Cookie" />
+</form>
+
+<h4>@ViewBag.Message</h4>
+
+<h4>
+    <a asp-action="ReadCookie" asp-controller="Home">
+        Read Cookies
+    </a>
+</h4>

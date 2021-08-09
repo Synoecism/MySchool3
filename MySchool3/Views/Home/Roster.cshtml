@@ -1,0 +1,24 @@
+﻿@model ISchoolRepository
+
+<h1>Teachers and students</h1>
+
+<h2>These are the students</h2>
+
+@foreach (Student student in Model.Students)
+{
+    <p>
+        <a asp-controller"Home" asp-action="ShowStudentInfo" asp-route-id="@student.StudentID">@student.Name</a>
+    </p>
+
+}
+
+<h2>These are the teachers</h2>
+
+
+@foreach (Teacher teacher in Model.Teachers)
+{
+
+    <p>
+        <a asp-controller"Home" asp-action="ShowTeacherInfo" asp-route-id="@teacher.TeacherID">@teacher.Name</a>
+    </p>
+}
